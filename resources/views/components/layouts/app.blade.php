@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ $title ?? 'Mi App Laravel' }}</title>
   @vite(['resources/css/app.css', 'resources/js/app.js'])
+  
 </head>
 <body>
   <x-header />
@@ -16,5 +17,8 @@
   </main>
 
   <x-footer />
+
+  @stack('scripts')
+
 </body>
 </html>

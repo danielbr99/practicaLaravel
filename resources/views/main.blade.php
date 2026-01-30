@@ -25,19 +25,14 @@
       <h3>Opciones</h3>
 
       <div class="grid">
-        <a class="card" href="#">
-          <h4>Opción 1</h4>
-          <p>Descripción breve de la opción.</p>
+        <a class="card" href="{{ route('projects.index') }}">
+          <h4>Proyectos</h4>
+          <p>Ver proyectos cargados mediante seeders.</p>
         </a>
 
-        <a class="card" href="#">
-          <h4>Opción 2</h4>
-          <p>Descripción breve de la opción.</p>
-        </a>
-
-        <a class="card" href="#">
-          <h4>Opción 3</h4>
-          <p>Descripción breve de la opción.</p>
+        <a class="card" href="{{ route('students.index') }}">
+          <h4>Gestión de alumnos</h4>
+          <p>Crear, editar, eliminar y listar alumnos.</p>
         </a>
       </div>
     </section>
