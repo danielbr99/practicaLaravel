@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\StudentController;
+use Illuminate\Http\Request;
 
 
 
@@ -21,5 +22,15 @@ Route::middleware('auth')->group(function () {
     Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
     Route::resource('students', StudentController::class);
 });
+
+Route::post('/language', function (Request $request) {
+    $request->validate([
+        'locale' => ['required', 'in:es,en,fr'],
+    ]);
+
+    session(['locale' => $request->locale]);
+
+    return redirect()->back();
+})->name('language.set');
 
 require __DIR__.'/auth.php';
